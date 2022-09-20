@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -16,22 +17,26 @@ import java.util.Set;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int user_id;
-
-    private String FirstName;
-
-    private String LastName;
-
-    private String Email;
-
-    private String Password;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
 
 
+    private String firstName;
 
-//    @ManyToOne
-//    @JoinColumn(name = "")
-//    private Role Role;
+
+    private String lastName;
+
+
+    private String email;
+
+
+    private String password;
+
+
+
+    @OneToMany(targetEntity = Role.class,cascade = CascadeType.ALL,fetch=FetchType.EAGER)
+    @JoinColumn(name="user_role",referencedColumnName = "id")
+    public List<Role> roles;
 
 //    @ManyToOne(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
 //    @JoinColumn(name = "role_id")

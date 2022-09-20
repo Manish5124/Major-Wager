@@ -11,8 +11,8 @@ public interface UserService {
 //    Register the user
     public String RegisterUser(User user);
 
-//    public String UpdateUser(User user);
+    public String UpdateUser(Long id,  User employeeDetails) throws Exception;
 
-    public String deleteUser(User user);
+    public String deleteUser(long id);
 
 }
