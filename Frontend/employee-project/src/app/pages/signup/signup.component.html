@@ -1,0 +1,88 @@
+<div class="login-form-flex bg" >
+  <mat-card>
+    <div class="d-flex justify-content-center pb-3">
+      <img  class="logo" src="../../../assets/logo.jpg" alt="login-logo"/>
+  
+    </div>
+    <mat-card-title class="title">
+      Signup
+    </mat-card-title>
+    <mat-card-content>
+      <mat-form-field class="example-full-width">
+        <input type="number"  matInput  placeholder="User id"  name="id" 
+        #empId="ngModel" [class.is-invalid]="empId.invalid && empId.touched"  id="empId"
+        [(ngModel)]="user.id" required>
+        <small class="text-danger" [class.d-none]="empId.valid || empId.untouched">Id is required</small>
+      </mat-form-field>
+      <br/>
+      <mat-form-field class="example-full-width">
+        <input type="text" matInput  placeholder="FirstName"  name="firstName" 
+        pattern="^[A-Za-z0-9._]{2,15}$"   #firstName="ngModel" [class.is-invalid]="firstName.invalid && firstName.touched"
+        [(ngModel)]="user.firstName" required>
+        <div *ngIf="firstName.errors && (firstName.touched)">
+
+          <small class="text-danger" *ngIf="firstName.errors['required']">First name is Required</small>
+
+          <small class="text-danger" *ngIf="firstName.errors['pattern']">First name contains atleast two letters</small>
+
+        </div>
+
+      </mat-form-field>
+      <br/>
+      <mat-form-field class="example-full-width">
+        <input type="text" matInput  placeholder="LastName"  name="LastName"  
+        #lastName="ngModel" id="lastName"
+        pattern="^[A-Za-z0-9._]{2,15}$" [class.is-invalid]="lastName.invalid && lastName.touched"
+        [(ngModel)]="user.lastName" required>
+        <div *ngIf="lastName.errors && (lastName.touched)">
+          <small class="text-danger" *ngIf="lastName.errors['required']">Last name is Required</small>
+          <small class="text-danger" *ngIf="lastName.errors['pattern']">Last name contains atleast two letters</small>
+        </div>
+      </mat-form-field>
+      <br/>
+      <mat-form-field class="example-full-width">
+        <input type="email" matInput  placeholder="Email"  id="email"  name="email" [class.is-invalid]="email.invalid && email.touched"
+
+        pattern="[a-z0-9!#$%&'*+-/=?^_`{|]+@[a-z0-9.-]+\.[com,org,net]{3}" #email="ngModel" [(ngModel)]="user.email" required>
+        <div *ngIf="email.errors && (email.touched)">
+
+          <small class="text-danger" *ngIf="email.errors['required']">Email is Required</small>
+
+          <small class="text-danger" *ngIf="email.errors['pattern']">Email format Invalid</small>
+
+      </div>
+      
+      </mat-form-field>
+    <br/>
+      <mat-form-field class="example-full-width">
+        <input type="password"  matInput  name="username" required placeholder="Password" id="password"  #password="ngModel" [class.is-invalid]="password.invalid&&password.touched"
+
+        pattern="^.*(?=.{6,})(?=..*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\S+$)^[^/]*$.*$" [(ngModel)]="user.password"/>
+        <div *ngIf="password.errors && (password.touched)">
+
+          <small class="text-danger" *ngIf="password.errors['required']">Password is Required</small>
+
+          <small class="text-danger" *ngIf="password.errors['pattern']">Password format Invalid</small>
+
+        </div>
+      </mat-form-field>
+      <br/>
+
+     
+<mat-form-field class="example-full-width">
+  <mat-label>Roles</mat-label>
+  <select matNativeControl required name="role"    [(ngModel)]="roleModel.roleName" >
+    <option value="manager"  >Admin</option>
+    <option value="user">user</option>
+ 
+  </select>
+</mat-form-field>
+    </mat-card-content>
+    <mat-card-actions class="title">
+        <button mat-raised-button (click)="addUser()"   color="primary">Signup</button>
+        <mat-card-content class="title">Already have an account?   <a [routerLink]="'/login'">SignIn</a></mat-card-content>
+            </mat-card-actions>
+    
+
+  </mat-card>
+</div>

@@ -1,0 +1,105 @@
+<!-- <div class="banner-image w-100 vh-100 d-flex justify-content-center align-items-center back ">
+
+   <div class="mt-5 back div-center">
+    
+     <div class="container content">
+        <h1 class="text-center">Create Jobs</h1>
+        <hr />
+        <form>
+          <div class="form-group">
+            <label >Job Id</label>
+            <input type="number" class="form-control" name="id" placeholder="Job ID" required>
+          </div>
+          <br>
+
+          <div class="form-group">
+            <label >Profit</label>
+            <input type="text" class="form-control" name="Profit" placeholder="Profit" required>
+          </div>
+
+        <br>
+          <div class="form-group">
+            <label>start time</label>
+            <input type="datetime-local" class="form-control" name="Starttime" placeholder="Start Time" required>
+          </div>
+
+
+          <br>
+          <div class="form-group">
+            <label>End time</label>
+            <input type="datetime-local" class="form-control" name="Endtime" placeholder="End Time" required>
+          </div>
+
+          <br>
+
+          <div class="form-group">
+            <label>Job Status</label>
+            <input type="text" class="form-control" name="Status" value="Not Started" required>
+          </div> -->
+          
+          <!-- <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div> -->
+          <!-- <div class="d-flex justify-content-center">
+
+            <button type="submit" class="btn btn-success btn-lg mb-1 mt-2">submit</button>
+          </div>
+          
+  
+        </form>
+  
+        </div>
+     </div>
+</div> -->
+<!-- <div class="backc"></div> -->
+
+<div class="card backcolor">
+ <div  class=" d-flex justify-content-center align-items-center "  >
+    <div class=" col-md-3 mt-3  mb-3 p-3 content container border shadow">
+      
+        <h1 class="text-center">Create Jobs</h1>
+        <hr />
+        <form (ngSubmit)="formSubmit()"  #jobForm="ngForm" >
+          <!-- <div class="form-group">
+            <label >Job Id</label>
+            <input type="number" matInput class="form-control" name="id" placeholder="Job ID"   [(ngModel)]="job.id" required>
+          </div>
+          <br> -->
+
+          <div class="form-group">
+            <label >Profit</label>
+            <input type="text"  class="form-control" name="Profit" placeholder="Profit"  matInput [(ngModel)]="job.profit" required>
+          </div>
+
+           <br>
+          <div class="form-group">
+            <label>start time</label>
+            <input type="datetime-local" class="form-control" name="Starttime" placeholder="Start Time"  matInput [(ngModel)]="job.starttime" required>
+          </div>
+
+
+          <br>
+          <div class="form-group">
+            <label>End time</label>
+            <input type="datetime-local" class="form-control" name="Endtime" placeholder="End Time"  matInput [(ngModel)]="job.endtime" required>
+          </div>
+
+          <br>
+
+          <div class="form-group">
+            <label>Job Status</label>
+            <input type="text" class="form-control" name="Status"  disabled value="Not Started">
+            <!-- matInput [(ngModel)]="job.status" -->
+          </div> 
+
+          <div class="d-flex justify-content-center">
+
+            <button type="submit" class="btn btn-success btn-lg  mt-3">submit</button>
+          </div>
+          
+  
+        </form>
+</div>
+    </div>
+</div>

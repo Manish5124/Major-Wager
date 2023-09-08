@@ -1,0 +1,34 @@
+
+   /* .banner-image { */
+    /* background-image: url("https://mintbook.com/assetsNew/img/banking.gif"); */
+        /* background-image: url('../../../../../assets/banner-img.jpg');
+        background-size: cover;
+   } */
+/* .bg{
+  background-image: url(../../../../../assets/No_jobs_available.jpg);
+  background-size: cover;
+} */
+   .card-img-top{
+    width: 120px;
+   }
+
+   .shadow{
+    box-shadow:15px  0 20px  0 gray !important ;
+   }
+   
+
+   .body{
+    background-color: #e9ecef;
+  }
+
+  .joblogo
+  {
+    margin-left: 170px;
+  }
+
+.no_jobs{
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 70px;
+  margin-bottom: 20px;     
+  }

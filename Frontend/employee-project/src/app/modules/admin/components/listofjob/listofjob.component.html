@@ -1,0 +1,118 @@
+<!-- <div  class="banner-image w-100 vh-100 d-flex justify-content-center align-items-center"  >
+    <div class="content text-center">
+      <h1 class="text-white">WEB ZONE</h1>
+    </div>
+</div> -->
+
+
+<!-- <div *ngIf="No_jobs_available" class="text-center mt-5 mb-5 p-2">
+  <img src="../../../../../assets/No_jobs_available.jpg"  alt="">
+  <h1>dgdgdgg</h1>
+</div> -->
+
+<!-- <ng-template *ngIf="!DofindMethod()"> -->
+
+<div *ngIf="show" class="no_jobs "><img src="../../../../../assets/No_jobs_available.jpg" alt=""></div>
+
+<div   *ngFor="let job of jobList">
+ 
+<div class="d-flex justify-content-center mt-2 p-3 mb-3 " >
+
+  <div class="card col-md-5 shadow" >
+    <div class="d-flex flex-row bd-highlight mb-3 justify-content-between">
+      <div class="joblogo  p-2 bd-highlight "> 
+        <img src="../../../../../assets/logo.jpg" class="card-img-top" alt="...">
+      </div>
+      <div class="jobstatus p-2 bd-highlight ">
+        <button type="button" class="btn btn-outline-primary btn-lg">{{job.status}}</button>
+       </div>
+    </div>
+
+
+ 
+    <div class="card-body">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item text-black">Job Id: {{job.jobId}}</li>
+        <li class="list-group-item  text-black">Profit:${{job.profit}}</li>
+        <li class="list-group-item  text-black">Start time: {{job.starttime}}</li>
+        <li class="list-group-item  text-black">End time: {{job.endtime}}</li>
+      </ul>
+    </div>    
+    <div class="card-footer col d-flex justify-content-center">
+      <div class="update text-center">
+        <button type="button" class="btn  btn-outline-success btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="edit(job)" >Update</button>
+        <!-- routerLink="../updatejob" -->
+      </div>
+      <div class="delete">
+        <button type="button" class="btn  btn-outline-danger btn-lg mx-3" (click)="deleteJob(job.jobId)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- </ng-template> -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 " id="exampleModalLabel" >Update Job</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+
+        <form #jobForm="ngForm" >
+          <div class="form-group">
+            <label >Job Id</label>
+            <input type="number" class="form-control " name="id"  disabled placeholder="Job ID" value="{{jobToUpdate.jobId}}" >
+          </div>
+          <br>
+
+          <div class="form-group">
+            <label >Profit</label>
+            <input type="text" class="form-control" name="Profit" placeholder="Profit"  matInput [(ngModel)]="jobToUpdate.profit" required>
+          </div>
+
+           <br>
+          <div class="form-group">
+            <label>start time</label>
+            <input type="datetime-local" class="form-control" name="Starttime" placeholder="Start Time"   matInput [(ngModel)]="jobToUpdate.starttime" required>
+          </div>
+
+
+          <br>
+          <div class="form-group">
+            <label>End time</label>
+            <input type="datetime-local" class="form-control" name="Endtime" placeholder="End Time"  matInput [(ngModel)]="jobToUpdate.endtime" required>
+          </div>
+
+          <br>
+
+          <div class="form-group">
+            <label>Job Status</label>
+            <input type="text" class="form-control" name="Status" value="Not Started"  matInput [(ngModel)]="jobToUpdate.status" required>
+          </div> 
+
+          <div class="d-flex justify-content-center">
+
+            <button type="submit" class="btn btn-success btn-lg  mt-3" (click)="UpdateJobData(jobToUpdate)">submit</button>
+          </div>
+          
+  
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+   
+    
+<!--    
+
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a> -->
+ 
+
+<!-- </div> -->

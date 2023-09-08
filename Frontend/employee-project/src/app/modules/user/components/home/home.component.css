@@ -1,0 +1,52 @@
+/* .gallery{
+
+    
+     background-image: url("https://cdn.dribbble.com/users/1319343/screenshots/14584578/media/0f03b736aece839041bb4370290355fd.gif");
+     background-repeat: no-repeat;
+
+    width: 97vh;
+}
+.half
+{
+    margin-top: 0%;
+
+} */
+body{
+  background-color: bisque ;
+}
+.home-img{
+  height: 60%;
+  width: 50%;
+  margin-top: 40px;
+  margin-bottom: 20px;  
+
+}
+
+.card {
+  top: 10px;
+  max-height: 500px;
+  max-width: 500px;
+  box-shadow: 2px 0 8px 2px rgb(99, 97, 97);
+}
+.card img{
+  height: 400px;;
+}
+.split {
+  
+    height: 100%;
+    width: 50%;
+    overflow-x: hidden;
+    padding-top: 70px;
+  }
+  .centered img {
+    width: 100%;
+
+  }
+  
+  .showbox:hover{
+    transform: translateY(-20px);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3) !important;
+    border-color: aqua;
+  }
+
+  

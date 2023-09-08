@@ -1,0 +1,27 @@
+{
+    "/auth":{
+        "target":"http://localhost:8881",
+        "secure":false,
+        "changeOrigin":true
+    },
+    "/employee":{
+        "target":"http://localhost:8881",
+        "secure":false,
+        "logLevel": "debug",
+        "changeOrigin":true
+    },
+    "/job":{
+        "target":"http://localhost:8881",
+        "secure":false,
+        "logLevel": "debug",
+        "changeOrigin":true
+    },
+    "/users":{
+        "target":"http://localhost:8881",
+        "secure":false,
+        "logLevel": "debug",
+        "changeOrigin":true
+    }
+ 
+
+}

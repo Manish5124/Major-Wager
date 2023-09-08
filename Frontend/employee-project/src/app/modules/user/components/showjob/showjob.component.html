@@ -1,0 +1,40 @@
+<div *ngIf="show" class="no_jobs "><img src="../../../../../assets/No_jobs_available.jpg" alt=""></div>
+
+<!-- *ngIf=" job.status == 'Not Started'" -->
+
+<div   *ngFor="let job of jobList">
+<div  class="d-flex justify-content-center mt-2 p-3 mb-3 " >
+    
+    <div class="card col-md-5 shadow" >
+      <div class="d-flex flex-row bd-highlight mb-3 justify-content-between">
+        <div class="joblogo  p-2 bd-highlight "> 
+          <img src="../../../../../assets/logo.jpg" class="card-img-top" alt="...">
+        </div>
+        <div class="jobstatus p-2 bd-highlight ">
+          <button type="button" class="btn btn-outline-primary btn-lg">{{job.status}}</button>
+         </div>
+      </div>
+  
+  
+   
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item text-black">Job Id: {{job.jobId}}</li>
+          <li class="list-group-item  text-black">Profit: ${{job.profit}}</li>
+          <li class="list-group-item  text-black">Start time:{{job.starttime}}</li>
+          <li class="list-group-item  text-black">End time:{{job.endtime}}</li>
+        </ul>
+      </div>    
+      <div class="card-footer col d-flex justify-content-center">
+        <div *ngIf="(job.status)=='Not Started'" class="update"> 
+          <button type="button" class="btn  btn-outline-success btn-lg" (click)="allocatejob(job.jobId)" >Accept Job</button>
+          <!-- <div *ngIf="!show" class="d-flex justify-content-around" >
+            <button type="button" class="btn  btn-outline-success btn-lg mx-3"  (click)="completedjob()">Completed Job</button>
+            <button type="button" class="btn  btn-outline-danger btn-lg mx-3" (click)="abortedjob()" >Aborted Job</button>
+          </div> -->
+         
+        </div>
+      </div>
+    </div>
+  </div>
+     </div>
